@@ -110,6 +110,15 @@
         {
           "args": [
             {
+              "name": "x",
+              "type": "T"
+            }
+          ],
+          "return": "T"
+        },
+        {
+          "args": [
+            {
               "name": "z",
               "type": "complex"
             }
@@ -955,14 +964,14 @@
           "args": [
             {
               "name": "y",
-              "type": "real"
+              "type": "T"
             },
             {
               "name": "x",
-              "type": "real"
+              "type": "T"
             }
           ],
-          "return": "real"
+          "return": "R"
         }
       ]
     },
@@ -2285,6 +2294,334 @@
             {
               "name": "theta",
               "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "binomial_logit_glm_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "binomial_logit_glm",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "row_vector"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "row_vector"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "int"
+            },
+            {
+              "name": "N",
+              "type": "int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "int"
+            },
+            {
+              "name": "N",
+              "type": "int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "binomial_logit_glm_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "row_vector"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "array[] int"
+            },
+            {
+              "name": "N",
+              "type": "array[] int"
+            },
+            {
+              "name": "x",
+              "type": "row_vector"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "int"
+            },
+            {
+              "name": "N",
+              "type": "int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "int"
+            },
+            {
+              "name": "N",
+              "type": "int"
+            },
+            {
+              "name": "x",
+              "type": "matrix"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "beta",
+              "type": "vector"
             }
           ],
           "return": "real"
@@ -4607,6 +4944,87 @@
         }
       ]
     },
+    "dirichlet_multinomial_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "dirichlet_multinomial",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "dirichlet_multinomial_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "alpha",
+              "type": "vector"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "dirichlet_multinomial_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "alpha",
+              "type": "vector"
+            },
+            {
+              "name": "N",
+              "type": "int"
+            }
+          ],
+          "return": "array[] int"
+        }
+      ]
+    },
     "dirichlet_rng": {
       "density": false,
       "deprecated": false,
@@ -4808,7 +5226,7 @@
               "type": "ints"
             }
           ],
-          "return": "int"
+          "return": "ints"
         }
       ]
     },
@@ -5963,6 +6381,37 @@
             }
           ],
           "return": "real"
+        }
+      ]
+    },
+    "fatal_error": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "x1",
+              "type": "T1"
+            },
+            {
+              "name": "...",
+              "type": "..."
+            },
+            {
+              "name": "xN",
+              "type": "TN"
+            }
+          ],
+          "return": "void"
         }
       ]
     },
@@ -15625,6 +16074,42 @@
           "args": [
             {
               "name": "x",
+              "type": "T"
+            }
+          ],
+          "return": "T"
+        },
+        {
+          "args": [
+            {
+              "name": "x",
+              "type": "T"
+            }
+          ],
+          "return": "T"
+        },
+        {
+          "args": [
+            {
+              "name": "x",
+              "type": "T"
+            }
+          ],
+          "return": "T"
+        },
+        {
+          "args": [
+            {
+              "name": "x",
+              "type": "T"
+            }
+          ],
+          "return": "T"
+        },
+        {
+          "args": [
+            {
+              "name": "x",
               "type": "complex"
             },
             {
@@ -20664,6 +21149,15 @@
           "args": [
             {
               "name": "x",
+              "type": "matrix"
+            }
+          ],
+          "return": "int"
+        },
+        {
+          "args": [
+            {
+              "name": "x",
               "type": "real"
             }
           ],
@@ -24028,6 +24522,72 @@
           "args": [
             {
               "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            },
+            {
+              "name": "var_beta",
+              "type": "real"
+            },
+            {
+              "name": "var_tau",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "y",
               "type": "reals"
             },
             {
@@ -24063,6 +24623,72 @@
       "operator": false,
       "sampling": null,
       "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            },
+            {
+              "name": "var_beta",
+              "type": "real"
+            },
+            {
+              "name": "var_tau",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
         {
           "args": [
             {
@@ -24480,5 +25106,5 @@
       "tuple"
     ]
   },
-  "version": "2.33"
+  "version": "2.35"
 }

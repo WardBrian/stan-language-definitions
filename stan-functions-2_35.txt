@@ -3,6 +3,7 @@ StanFunction; Arguments; ReturnType
 Phi; (T x); R
 Phi_approx; (T x); R
 abs; (T x); T
+abs; (T x); T
 abs; (complex z); real
 acos; (T x); R
 acos; (complex z); complex
@@ -51,13 +52,13 @@ asin; (T x); R
 asin; (complex z); complex
 asinh; (T x); R
 asinh; (complex z); complex
-atan2; (real y, real x); real
+atan2; (T y, T x); R
 atan; (T x); R
 atan; (complex z); complex
 atanh; (T x); R
 atanh; (complex z); complex
 bernoulli; ~; real
-bernoulli_cdf; (ints y, reals theta); real
+bernoulli_cdf; (ints y | reals theta); real
 bernoulli_lccdf; (ints y | reals theta); real
 bernoulli_lcdf; (ints y | reals theta); real
 bernoulli_logit; ~; real
@@ -90,13 +91,13 @@ beta; (T1 x, T2 y); R
 beta; (real alpha, real beta); real
 beta; ~; real
 beta_binomial; ~; real
-beta_binomial_cdf; (ints n, ints N, reals alpha, reals beta); real
+beta_binomial_cdf; (ints n | ints N, reals alpha, reals beta); real
 beta_binomial_lccdf; (ints n | ints N, reals alpha, reals beta); real
 beta_binomial_lcdf; (ints n | ints N, reals alpha, reals beta); real
 beta_binomial_lpmf; (ints n | ints N, reals alpha, reals beta); real
 beta_binomial_lupmf; (ints n | ints N, reals alpha, reals beta); real
 beta_binomial_rng; (ints N, reals alpha, reals beta); R
-beta_cdf; (reals theta, reals alpha, reals beta); real
+beta_cdf; (reals theta | reals alpha, reals beta); real
 beta_lccdf; (reals theta | reals alpha, reals beta); real
 beta_lcdf; (reals theta | reals alpha, reals beta); real
 beta_lpdf; (reals theta | reals alpha, reals beta); real
@@ -111,10 +112,23 @@ beta_rng; (reals alpha, reals beta); R
 binary_log_loss; (T1 x, T2 y); R
 binary_log_loss; (int y, real y_hat); real
 binomial; ~; real
-binomial_cdf; (ints n, ints N, reals theta); real
+binomial_cdf; (ints n | ints N, reals theta); real
 binomial_lccdf; (ints n | ints N, reals theta); real
 binomial_lcdf; (ints n | ints N, reals theta); real
 binomial_logit; ~; real
+binomial_logit_glm; ~; real
+binomial_logit_glm_lpmf; (array[] int n | array[] int N, matrix x, real alpha, vector beta); real
+binomial_logit_glm_lpmf; (array[] int n | array[] int N, matrix x, vector alpha, vector beta); real
+binomial_logit_glm_lpmf; (array[] int n | array[] int N, row_vector x, real alpha, vector beta); real
+binomial_logit_glm_lpmf; (array[] int n | array[] int N, row_vector x, vector alpha, vector beta); real
+binomial_logit_glm_lpmf; (int n | int N, matrix x, real alpha, vector beta); real
+binomial_logit_glm_lpmf; (int n | int N, matrix x, vector alpha, vector beta); real
+binomial_logit_glm_lupmf; (array[] int n | array[] int N, matrix x, real alpha, vector beta); real
+binomial_logit_glm_lupmf; (array[] int n | array[] int N, matrix x, vector alpha, vector beta); real
+binomial_logit_glm_lupmf; (array[] int n | array[] int N, row_vector x, real alpha, vector beta); real
+binomial_logit_glm_lupmf; (array[] int n | array[] int N, row_vector x, vector alpha, vector beta); real
+binomial_logit_glm_lupmf; (int n | int N, matrix x, real alpha, vector beta); real
+binomial_logit_glm_lupmf; (int n | int N, matrix x, vector alpha, vector beta); real
 binomial_logit_lpmf; (ints n | ints N, reals alpha); real
 binomial_logit_lupmf; (ints n | ints N, reals alpha); real
 binomial_lpmf; (ints n | ints N, reals theta); real
@@ -140,7 +154,7 @@ categorical_lpmf; (ints y | vector theta); real
 categorical_lupmf; (ints y | vector theta); real
 categorical_rng; (vector theta); int
 cauchy; ~; real
-cauchy_cdf; (reals y, reals mu, reals sigma); real
+cauchy_cdf; (reals y | reals mu, reals sigma); real
 cauchy_lccdf; (reals y | reals mu, reals sigma); real
 cauchy_lcdf; (reals y | reals mu, reals sigma); real
 cauchy_lpdf; (reals y | reals mu, reals sigma); real
@@ -149,7 +163,7 @@ cauchy_rng; (reals mu, reals sigma); R
 cbrt; (T x); R
 ceil; (T x); R
 chi_square; ~; real
-chi_square_cdf; (reals y, reals nu); real
+chi_square_cdf; (reals y | reals nu); real
 chi_square_lccdf; (reals y | reals nu); real
 chi_square_lcdf; (reals y | reals nu); real
 chi_square_lpdf; (reals y | reals nu); real
@@ -231,14 +245,18 @@ dims; (T x); array[] int
 dirichlet; ~; real
 dirichlet_lpdf; (vectors theta | vectors alpha); real
 dirichlet_lupdf; (vectors theta | vectors alpha); real
+dirichlet_multinomial; ~; real
+dirichlet_multinomial_lpmf; (array[] int y | vector alpha); real
+dirichlet_multinomial_lupmf; (array[] int y | vector alpha); real
+dirichlet_multinomial_rng; (vector alpha, int N); array[] int
 dirichlet_rng; (vector alpha); vector
 discrete_range; ~; real
-discrete_range_cdf; (ints y, ints l, ints u); real
+discrete_range_cdf; (ints y | ints l, ints u); real
 discrete_range_lccdf; (ints y | ints l, ints u); real
 discrete_range_lcdf; (ints y | ints l, ints u); real
 discrete_range_lpmf; (ints y | ints l, ints u); real
 discrete_range_lupmf; (ints y | ints l, ints u); real
-discrete_range_rng; (ints l, ints u); int
+discrete_range_rng; (ints l, ints u); ints
 distance; (row_vector x, row_vector y); real
 distance; (row_vector x, vector y); real
 distance; (vector x, row_vector y); real
@@ -256,7 +274,7 @@ dot_self; (complex_vector x); complex
 dot_self; (row_vector x); real
 dot_self; (vector x); real
 double_exponential; ~; real
-double_exponential_cdf; (reals y, reals mu, reals sigma); real
+double_exponential_cdf; (reals y | reals mu, reals sigma); real
 double_exponential_lccdf; (reals y | reals mu, reals sigma); real
 double_exponential_lcdf; (reals y | reals mu, reals sigma); real
 double_exponential_lpdf; (reals y | reals mu, reals sigma); real
@@ -281,7 +299,7 @@ exp2; (T x); R
 exp; (T x); R
 exp; (complex z); complex
 exp_mod_normal; ~; real
-exp_mod_normal_cdf; (reals y, reals mu, reals sigma, reals lambda); real
+exp_mod_normal_cdf; (reals y | reals mu, reals sigma, reals lambda); real
 exp_mod_normal_lccdf; (reals y | reals mu, reals sigma, reals lambda); real
 exp_mod_normal_lcdf; (reals y | reals mu, reals sigma, reals lambda); real
 exp_mod_normal_lpdf; (reals y | reals mu, reals sigma, reals lambda); real
@@ -289,7 +307,7 @@ exp_mod_normal_lupdf; (reals y | reals mu, reals sigma, reals lambda); real
 exp_mod_normal_rng; (reals mu, reals sigma, reals lambda); R
 expm1; (T x); R
 exponential; ~; real
-exponential_cdf; (reals y, reals beta); real
+exponential_cdf; (reals y | reals beta); real
 exponential_lccdf; (reals y | reals beta); real
 exponential_lcdf; (reals y | reals beta); real
 exponential_lpdf; (reals y | reals beta); real
@@ -297,6 +315,7 @@ exponential_lupdf; (reals y | reals beta); real
 exponential_rng; (reals beta); R
 falling_factorial; (T1 x, T2 y); R
 falling_factorial; (real x, real n); real
+fatal_error; (T1 x1,..., TN xN); void
 fdim; (T1 x, T2 y); R
 fdim; (real x, real y); real
 fft2; (complex_matrix m); complex_matrix
@@ -310,14 +329,14 @@ fmin; (real x, real y); real
 fmod; (T1 x, T2 y); R
 fmod; (real x, real y); real
 frechet; ~; real
-frechet_cdf; (reals y, reals alpha, reals sigma); real
+frechet_cdf; (reals y | reals alpha, reals sigma); real
 frechet_lccdf; (reals y | reals alpha, reals sigma); real
 frechet_lcdf; (reals y | reals alpha, reals sigma); real
 frechet_lpdf; (reals y | reals alpha, reals sigma); real
 frechet_lupdf; (reals y | reals alpha, reals sigma); real
 frechet_rng; (reals alpha, reals sigma); R
 gamma; ~; real
-gamma_cdf; (reals y, reals alpha, reals beta); real
+gamma_cdf; (reals y | reals alpha, reals beta); real
 gamma_lccdf; (reals y | reals alpha, reals beta); real
 gamma_lcdf; (reals y | reals alpha, reals beta); real
 gamma_lpdf; (reals y | reals alpha, reals beta); real
@@ -338,7 +357,7 @@ get_imag; (complex z); real
 get_real; (T x); T
 get_real; (complex z); real
 gumbel; ~; real
-gumbel_cdf; (reals y, reals mu, reals beta); real
+gumbel_cdf; (reals y | reals mu, reals beta); real
 gumbel_lccdf; (reals y | reals mu, reals beta); real
 gumbel_lcdf; (reals y | reals mu, reals beta); real
 gumbel_lpdf; (reals y | reals mu, reals beta); real
@@ -374,7 +393,7 @@ integrate_ode_rk45; (function ode, array[] real initial_state, real initial_time
 inv; (T x); R
 inv_Phi; (T x); R
 inv_chi_square; ~; real
-inv_chi_square_cdf; (reals y, reals nu); real
+inv_chi_square_cdf; (reals y | reals nu); real
 inv_chi_square_lccdf; (reals y | reals nu); real
 inv_chi_square_lcdf; (reals y | reals nu); real
 inv_chi_square_lpdf; (reals y | reals nu); real
@@ -385,7 +404,7 @@ inv_erfc; (T x); R
 inv_fft2; (complex_matrix m); complex_matrix
 inv_fft; (complex_vector u); complex_vector
 inv_gamma; ~; real
-inv_gamma_cdf; (reals y, reals alpha, reals beta); real
+inv_gamma_cdf; (reals y | reals alpha, reals beta); real
 inv_gamma_lccdf; (reals y | reals alpha, reals beta); real
 inv_gamma_lcdf; (reals y | reals alpha, reals beta); real
 inv_gamma_lpdf; (reals y | reals alpha, reals beta); real
@@ -462,7 +481,7 @@ log_sum_exp; (matrix x); real
 log_sum_exp; (row_vector x); real
 log_sum_exp; (vector x); real
 logistic; ~; real
-logistic_cdf; (reals y, reals mu, reals sigma); real
+logistic_cdf; (reals y | reals mu, reals sigma); real
 logistic_lccdf; (reals y | reals mu, reals sigma); real
 logistic_lcdf; (reals y | reals mu, reals sigma); real
 logistic_lpdf; (reals y | reals mu, reals sigma); real
@@ -470,11 +489,11 @@ logistic_lupdf; (reals y | reals mu, reals sigma); real
 logistic_rng; (reals mu, reals sigma); R
 logit; (T x); R
 loglogistic; ~; real
-loglogistic_cdf; (reals y, reals alpha, reals beta); real
+loglogistic_cdf; (reals y | reals alpha, reals beta); real
 loglogistic_lpdf; (reals y | reals alpha, reals beta); real
 loglogistic_rng; (reals mu, reals sigma); R
 lognormal; ~; real
-lognormal_cdf; (reals y, reals mu, reals sigma); real
+lognormal_cdf; (reals y | reals mu, reals sigma); real
 lognormal_lccdf; (reals y | reals mu, reals sigma); real
 lognormal_lcdf; (reals y | reals mu, reals sigma); real
 lognormal_lpdf; (reals y | reals mu, reals sigma); real
@@ -584,7 +603,7 @@ multinomial_rng; (vector theta, int N); array[] int
 multiply_lower_tri_self_transpose; (matrix x); matrix
 neg_binomial; ~; real
 neg_binomial_2; ~; real
-neg_binomial_2_cdf; (ints n, reals mu, reals phi); real
+neg_binomial_2_cdf; (ints n | reals mu, reals phi); real
 neg_binomial_2_lccdf; (ints n | reals mu, reals phi); real
 neg_binomial_2_lcdf; (ints n | reals mu, reals phi); real
 neg_binomial_2_log; ~; real
@@ -607,7 +626,7 @@ neg_binomial_2_log_rng; (reals eta, reals phi); R
 neg_binomial_2_lpmf; (ints n | reals mu, reals phi); real
 neg_binomial_2_lupmf; (ints n | reals mu, reals phi); real
 neg_binomial_2_rng; (reals mu, reals phi); R
-neg_binomial_cdf; (ints n, reals alpha, reals beta); real
+neg_binomial_cdf; (ints n | reals alpha, reals beta); real
 neg_binomial_lccdf; (ints n | reals alpha, reals beta); real
 neg_binomial_lcdf; (ints n | reals alpha, reals beta); real
 neg_binomial_lpmf; (ints n | reals alpha, reals beta); real
@@ -622,7 +641,7 @@ norm2; (row_vector x); real
 norm2; (vector x); real
 norm; (complex z); real
 normal; ~; real
-normal_cdf; (reals y, reals mu, reals sigma); real
+normal_cdf; (reals y | reals mu, reals sigma); real
 normal_id_glm; ~; real
 normal_id_glm_lpdf; (real y | matrix x, real alpha, vector beta, real sigma); real
 normal_id_glm_lpdf; (real y | matrix x, real alpha, vector beta, vector sigma); real
@@ -742,6 +761,10 @@ operator+; (vector x, real y); vector
 operator+; (vector x, vector y); vector
 operator+=; (T x, U y); void
 operator+=; (complex x, complex y); void
+operator-; (T x); T
+operator-; (T x); T
+operator-; (T x); T
+operator-; (T x); T
 operator-; (T x); T
 operator-; (complex x, complex y); complex
 operator-; (complex x, complex_matrix y); complex_matrix
@@ -873,14 +896,14 @@ ordered_probit_rng; (real eta, vector c); int
 owens_t; (T1 x, T2 y); R
 owens_t; (real h, real a); real
 pareto; ~; real
-pareto_cdf; (reals y, reals y_min, reals alpha); real
+pareto_cdf; (reals y | reals y_min, reals alpha); real
 pareto_lccdf; (reals y | reals y_min, reals alpha); real
 pareto_lcdf; (reals y | reals y_min, reals alpha); real
 pareto_lpdf; (reals y | reals y_min, reals alpha); real
 pareto_lupdf; (reals y | reals y_min, reals alpha); real
 pareto_rng; (reals y_min, reals alpha); R
 pareto_type_2; ~; real
-pareto_type_2_cdf; (reals y, reals mu, reals lambda, reals alpha); real
+pareto_type_2_cdf; (reals y | reals mu, reals lambda, reals alpha); real
 pareto_type_2_lccdf; (reals y | reals mu, reals lambda, reals alpha); real
 pareto_type_2_lcdf; (reals y | reals mu, reals lambda, reals alpha); real
 pareto_type_2_lpdf; (reals y | reals mu, reals lambda, reals alpha); real
@@ -888,7 +911,7 @@ pareto_type_2_lupdf; (reals y | reals mu, reals lambda, reals alpha); real
 pareto_type_2_rng; (reals mu, reals lambda, reals alpha); R
 pi; (); real
 poisson; ~; real
-poisson_cdf; (ints n, reals lambda); real
+poisson_cdf; (ints n | reals lambda); real
 poisson_lccdf; (ints n | reals lambda); real
 poisson_lcdf; (ints n | reals lambda); real
 poisson_log; ~; real
@@ -950,7 +973,7 @@ rank; (array[] real v, int s); int
 rank; (row_vector v, int s); int
 rank; (vector v, int s); int
 rayleigh; ~; real
-rayleigh_cdf; (real y, real sigma); real
+rayleigh_cdf; (real y | real sigma); real
 rayleigh_lccdf; (real y | real sigma); real
 rayleigh_lcdf; (real y | real sigma); real
 rayleigh_lpdf; (reals y | reals sigma); real
@@ -1001,7 +1024,7 @@ rows_dot_self; (row_vector x); vector
 rows_dot_self; (vector x); vector
 scale_matrix_exp_multiply; (real t, matrix A, matrix B); matrix
 scaled_inv_chi_square; ~; real
-scaled_inv_chi_square_cdf; (reals y, reals nu, reals sigma); real
+scaled_inv_chi_square_cdf; (reals y | reals nu, reals sigma); real
 scaled_inv_chi_square_lccdf; (reals y | reals nu, reals sigma); real
 scaled_inv_chi_square_lcdf; (reals y | reals nu, reals sigma); real
 scaled_inv_chi_square_lpdf; (reals y | reals nu, reals sigma); real
@@ -1027,18 +1050,19 @@ size; (complex_row_vector x); int
 size; (complex_vector x); int
 size; (int x); int
 size; (matrix x); int
+size; (matrix x); int
 size; (real x); int
 size; (row_vector x); int
 size; (vector x); int
 skew_double_exponential; ~; real
-skew_double_exponential_cdf; (reals y, reals mu, reals sigma, reals tau); real
+skew_double_exponential_cdf; (reals y | reals mu, reals sigma, reals tau); real
 skew_double_exponential_lccdf; (reals y | reals mu, reals sigma, reals tau); real
 skew_double_exponential_lcdf; (reals y | reals mu, reals sigma, reals tau); real
 skew_double_exponential_lpdf; (reals y | reals mu, reals sigma, reals tau); real
 skew_double_exponential_lupdf; (reals y | reals mu, reals sigma, reals tau); real
 skew_double_exponential_rng; (reals mu, reals sigma); R
 skew_normal; ~; real
-skew_normal_cdf; (reals y, reals xi, reals omega, reals alpha); real
+skew_normal_cdf; (reals y | reals xi, reals omega, reals alpha); real
 skew_normal_lccdf; (reals y | reals xi, reals omega, reals alpha); real
 skew_normal_lcdf; (reals y | reals xi, reals omega, reals alpha); real
 skew_normal_lpdf; (reals y | reals xi, reals omega, reals alpha); real
@@ -1080,7 +1104,7 @@ std_normal_qf; (T x); R
 std_normal_rng; (); real
 step; (real x); real
 student_t; ~; real
-student_t_cdf; (reals y, reals nu, reals mu, reals sigma); real
+student_t_cdf; (reals y | reals nu, reals mu, reals sigma); real
 student_t_lccdf; (reals y | reals nu, reals mu, reals sigma); real
 student_t_lcdf; (reals y | reals nu, reals mu, reals sigma); real
 student_t_lpdf; (reals y | reals nu, reals mu, reals sigma); real
@@ -1189,7 +1213,7 @@ trace_quad_form; (matrix A, matrix B); real
 trigamma; (T x); R
 trunc; (T x); R
 uniform; ~; real
-uniform_cdf; (reals y, reals alpha, reals beta); real
+uniform_cdf; (reals y | reals alpha, reals beta); real
 uniform_lccdf; (reals y | reals alpha, reals beta); real
 uniform_lcdf; (reals y | reals alpha, reals beta); real
 uniform_lpdf; (reals y | reals alpha, reals beta); real
@@ -1208,14 +1232,18 @@ von_mises_lpdf; (reals y | reals mu, reals kappa); real
 von_mises_lupdf; (reals y | reals mu, reals kappa); real
 von_mises_rng; (reals mu, reals kappa); R
 weibull; ~; real
-weibull_cdf; (reals y, reals alpha, reals sigma); real
+weibull_cdf; (reals y | reals alpha, reals sigma); real
 weibull_lccdf; (reals y | reals alpha, reals sigma); real
 weibull_lcdf; (reals y | reals alpha, reals sigma); real
 weibull_lpdf; (reals y | reals alpha, reals sigma); real
 weibull_lupdf; (reals y | reals alpha, reals sigma); real
 weibull_rng; (reals alpha, reals sigma); R
 wiener; ~; real
+wiener_lpdf; (real y | real alpha, real tau, real beta, real delta, real var_delta); real
+wiener_lpdf; (real y | real alpha, real tau, real beta, real delta, real var_delta, real var_beta, real var_tau); real
 wiener_lpdf; (reals y | reals alpha, reals tau, reals beta, reals delta); real
+wiener_lupdf; (real y | real alpha, real tau, real beta, real delta, real var_delta); real
+wiener_lupdf; (real y | real alpha, real tau, real beta, real delta, real var_delta, real var_beta, real var_tau); real
 wiener_lupdf; (reals y | reals alpha, reals tau, reals beta, reals delta); real
 wishart; ~; real
 wishart_cholesky_lpdf; (matrix L_W | real nu, matrix L_S); real
