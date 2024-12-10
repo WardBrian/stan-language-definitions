@@ -102,6 +102,13 @@ beta_lccdf; (reals theta | reals alpha, reals beta); real
 beta_lcdf; (reals theta | reals alpha, reals beta); real
 beta_lpdf; (reals theta | reals alpha, reals beta); real
 beta_lupdf; (reals theta | reals alpha, reals beta); real
+beta_neg_binomial; ~; real
+beta_neg_binomial_cdf; (ints n | reals r, reals alpha, reals beta); real
+beta_neg_binomial_lccdf; (ints n | reals r, reals alpha, reals beta); real
+beta_neg_binomial_lcdf; (ints n | reals r, reals alpha, reals beta); real
+beta_neg_binomial_lpmf; (ints n | reals r, reals alpha, reals beta); real
+beta_neg_binomial_lupmf; (ints n | reals r, reals alpha, reals beta); real
+beta_neg_binomial_rng; (reals r, reals alpha, reals beta); R
 beta_proportion; ~; real
 beta_proportion_lccdf; (reals theta | reals mu, reals kappa); real
 beta_proportion_lcdf; (reals theta | reals mu, reals kappa); real
@@ -468,7 +475,7 @@ log_diff_exp; (real x, real y); real
 log_falling_factorial; (real x, real n); real
 log_inv_logit; (T x); R
 log_inv_logit_diff; (T1 x, T2 y); R
-log_mix; (T1 theta, T2 lp1, T3 lp2); R
+log_mix; (T1 thetas, T2 lps); R
 log_mix; (real theta, real lp1, real lp2); real
 log_modified_bessel_first_kind; (T1 x, T2 y); R
 log_modified_bessel_first_kind; (real v, real z); real

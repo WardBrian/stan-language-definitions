@@ -24,9 +24,12 @@ types:
     - "corr_matrix"
     - "cholesky_factor_cov"
     - "cholesky_factor_corr"
+    - "sum_to_zero_vector"
     - "vector"
     - "simplex"
     - "unit_vector"
+    - "column_stochastic_matrix"
+    - "row_stochastic_matrix"
     - "ordered"
     - "positive_ordered"
     - "row_vector"
@@ -73,9 +76,11 @@ keywords:
   other:
     - "return"
     - "target"
+    - "jacobian"
   functions:
     - "print"
     - "reject"
+    - "fatal_error"
   range_constraints:
     - "lower"
     - "upper"
@@ -135,6 +140,7 @@ reserved:
   - get_lp
   - increment_log_prob
   - target
+  - jacobian
 
 operators:
   - "||"
