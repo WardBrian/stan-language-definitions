@@ -178,6 +178,12 @@ chi_square_lupdf; (reals y | reals nu); real
 chi_square_rng; (reals nu); R
 chol2inv; (matrix L); matrix
 cholesky_decompose; (matrix A); matrix
+cholesky_factor_corr_constrain; (vectors y, int K); matrices
+cholesky_factor_corr_jacobian; (vectors y, int K); matrices
+cholesky_factor_corr_unconstrain; (matrices x); vectors
+cholesky_factor_cov_constrain; (vectors y, int M, int N); matrices
+cholesky_factor_cov_jacobian; (vectors y, int M, int N); matrices
+cholesky_factor_cov_unconstrain; (matrices x); vectors
 choose; (T1 x, T2 y); R
 choose; (int x, int y); int
 col; (complex_matrix x, int n); complex_vector
@@ -208,6 +214,9 @@ complex_schur_decompose_u; (complex_matrix A); complex_matrix
 complex_schur_decompose_u; (matrix A); complex_matrix
 conj; (Z z); Z
 conj; (complex z); complex
+corr_matrix_constrain; (vectors y, int K); matrices
+corr_matrix_jacobian; (vectors y, int K); matrices
+corr_matrix_unconstrain; (matrices x); vectors
 cos; (T x); R
 cos; (complex z); complex
 cosh; (T x); R
@@ -218,6 +227,9 @@ cov_exp_quad; (row_vectors x, real alpha, real rho); matrix
 cov_exp_quad; (row_vectors x1, row_vectors x2, real alpha, real rho); matrix
 cov_exp_quad; (vectors x, real alpha, real rho); matrix
 cov_exp_quad; (vectors x1, vectors x2, real alpha, real rho); matrix
+cov_matrix_constrain; (vectors y, int K); matrices
+cov_matrix_jacobian; (vectors y, int K); matrices
+cov_matrix_unconstrain; (matrices x); vectors
 crossprod; (matrix x); matrix
 csr_extract; (matrix a); tuple(vector, array[] int, array[] int)
 csr_extract_u; (matrix a); array[] int
@@ -363,6 +375,37 @@ get_imag; (T x); T
 get_imag; (complex z); real
 get_real; (T x); T
 get_real; (complex z); real
+gp_dot_prod_cov; (array[] real x, real sigma); matrix
+gp_dot_prod_cov; (array[] real x1, array[] real x2, real sigma); matrix
+gp_dot_prod_cov; (vectors x, real sigma); matrix
+gp_dot_prod_cov; (vectors x1, vectors x2, real sigma); matrix
+gp_exp_quad_cov; (array[] real x, real sigma, real length_scale); matrix
+gp_exp_quad_cov; (array[] real x1, array[] real x2, real sigma, real length_scale); matrix
+gp_exp_quad_cov; (vectors x, real sigma, array[] real length_scale); matrix
+gp_exp_quad_cov; (vectors x, real sigma, real length_scale); matrix
+gp_exp_quad_cov; (vectors x1, vectors x2, real sigma, array[] real length_scale); matrix
+gp_exponential_cov; (array[] real x, real sigma, real length_scale); matrix
+gp_exponential_cov; (array[] real x1, array[] real x2, real sigma, real length_scale); matrix
+gp_exponential_cov; (vectors x, real sigma, array[] real length_scale); matrix
+gp_exponential_cov; (vectors x, real sigma, real length_scale); matrix
+gp_exponential_cov; (vectors x1, vectors x2, real sigma, array[] real length_scale); matrix
+gp_exponential_cov; (vectors x1, vectors x2, real sigma, real length_scale); matrix
+gp_matern23_cov; (array[] real x, real sigma, real length_scale); matrix
+gp_matern23_cov; (array[] real x1, array[] real x2, real sigma, real length_scale); matrix
+gp_matern23_cov; (vectors x, real sigma, array[] real length_scale); matrix
+gp_matern23_cov; (vectors x, real sigma, real length_scale); matrix
+gp_matern23_cov; (vectors x1, vectors x2, real sigma, array[] real length_scale); matrix
+gp_matern23_cov; (vectors x1, vectors x2, real sigma, real length_scale); matrix
+gp_matern52_cov; (array[] real x, real sigma, real length_scale); matrix
+gp_matern52_cov; (array[] real x1, array[] real x2, real sigma, real length_scale); matrix
+gp_matern52_cov; (vectors x, real sigma, array[] real length_scale); matrix
+gp_matern52_cov; (vectors x, real sigma, real length_scale); matrix
+gp_matern52_cov; (vectors x1, vectors x2, real sigma, array[] real length_scale); matrix
+gp_matern52_cov; (vectors x1, vectors x2, real sigma, real length_scale); matrix
+gp_periodic_cov; (array[] real x, real sigma, real length_scale, real period); matrix
+gp_periodic_cov; (array[] real x1, array[] real x2, real sigma, real length_scale, real period); matrix
+gp_periodic_cov; (vectors x, real sigma, real length_scale, real period); matrix
+gp_periodic_cov; (vectors x1, vectors x2, real sigma, real length_scale, real period); matrix
 gumbel; ~; real
 gumbel_cdf; (reals y | reals mu, reals beta); real
 gumbel_lccdf; (reals y | reals mu, reals beta); real
@@ -379,8 +422,12 @@ hmm_hidden_state_prob; (matrix log_omega, matrix Gamma, vector rho); matrix
 hmm_latent_rng; (matrix log_omega, matrix Gamma, vector rho); array[] int
 hmm_marginal; (matrix log_omega, matrix Gamma, vector rho); real
 hypergeometric; ~; real
+hypergeometric_1F0; (real a, real z); real
+hypergeometric_2F1; (real a1, real a2, real b1, real z); real
+hypergeometric_3F2; (T1 a, T2 b, real z); real
 hypergeometric_lpmf; (int n | int N, int a, int b); real
 hypergeometric_lupmf; (int n | int N, int a, int b); real
+hypergeometric_pFq; (T1 a, T2 b, real z); real
 hypergeometric_rng; (int N, int a, int2 b); int
 hypot; (T1 x, T2 y); R
 hypot; (real x, real y); real
@@ -506,6 +553,12 @@ lognormal_lcdf; (reals y | reals mu, reals sigma); real
 lognormal_lpdf; (reals y | reals mu, reals sigma); real
 lognormal_lupdf; (reals y | reals mu, reals sigma); real
 lognormal_rng; (reals mu, reals sigma); R
+lower_bound_constrain; (reals y, reals lb); reals
+lower_bound_jacobian; (reals y, reals lb); reals
+lower_bound_unconstrain; (reals x, reals lb); reals
+lower_upper_bound_constrain; (reals y, reals lb, reals ub); reals
+lower_upper_bound_jacobian; (reals y, reals lb, reals ub); reals
+lower_upper_bound_unconstrain; (reals x, reals lb, reals ub); reals
 machine_precision; (); real
 map_rect; (F f, vector phi, array[] vector theta, data array[,] real x_r, data array[,] int x_i); vector
 matrix_exp; (matrix A); matrix
@@ -692,6 +745,9 @@ ode_ckrk; (function ode, vector initial_state, real initial_time, array[] real t
 ode_ckrk_tol; (function ode, vector initial_state, real initial_time, array[] real times, data real rel_tol, data real abs_tol, int max_num_steps, ...); array[] vector
 ode_rk45; (function ode, vector initial_state, real initial_time, array[] real times, ...); array[] vector
 ode_rk45_tol; (function ode, vector initial_state, real initial_time, array[] real times, data real rel_tol, data real abs_tol, int max_num_steps, ...); array[] vector
+offset_multiplier_constrain; (reals y, reals offset, reals mult); reals
+offset_multiplier_jacobian; (reals y, reals offset, reals mult); reals
+offset_multiplier_unconstrain; (reals x, reals offset, reals mult); reals
 one_hot_array; (int n, int k); array[] real
 one_hot_int_array; (int n, int k); array[] int
 one_hot_row_vector; (int n, int k); row_vector
@@ -882,6 +938,8 @@ operator^; (complex x, complex y); complex
 operator^; (real x, real y); real
 operator||; (int x, int y); int
 operator||; (real x, real y); int
+ordered_constrain; (vectors y); vectors
+ordered_jacobian; (vectors y); vectors
 ordered_logistic; ~; real
 ordered_logistic_glm_lpmf; (array[] int y | matrix x, vector beta, vector c); real
 ordered_logistic_glm_lpmf; (array[] int y | row_vector x, vector beta, vector c); real
@@ -900,6 +958,7 @@ ordered_probit_lpmf; (ints k | vector eta, vectors c); real
 ordered_probit_lupmf; (ints k | real eta, vectors c); real
 ordered_probit_lupmf; (ints k | vector eta, vectors c); real
 ordered_probit_rng; (real eta, vector c); int
+ordered_unconstrain; (vectors x); vectors
 owens_t; (T1 x, T2 y); R
 owens_t; (real h, real a); real
 pareto; ~; real
@@ -943,6 +1002,9 @@ poisson_lupmf; (ints n | reals lambda); real
 poisson_rng; (reals lambda); R
 polar; (real r, real theta); complex
 positive_infinity; (); real
+positive_ordered_constrain; (vectors y); vectors
+positive_ordered_jacobian; (vectors y); vectors
+positive_ordered_unconstrain; (vectors x); vectors
 pow; (T1 x, T2 y); R
 pow; (T1 x, T2 y); Z
 pow; (complex x, complex y); complex
@@ -1046,6 +1108,9 @@ segment; (complex_row_vector rv, int i, int n); complex_row_vector
 segment; (complex_vector v, int i, int n); complex_vector
 segment; (row_vector rv, int i, int n); row_vector
 segment; (vector v, int i, int n); vector
+simplex_constrain; (vectors y); vectors
+simplex_jacobian; (vectors y); vectors
+simplex_unconstrain; (vectors x); vectors
 sin; (T x); R
 sin; (complex z); complex
 singular_values; (complex_matrix A); vector
@@ -1076,6 +1141,10 @@ skew_normal_lpdf; (reals y | reals xi, reals omega, reals alpha); real
 skew_normal_lupdf; (reals y | reals xi, reals omega, reals alpha); real
 skew_normal_rng; (reals xi, reals omega, real alpha); R
 softmax; (vector x); vector
+solve_newton; (function algebra_system, vector y_guess, ...); vector
+solve_newton_tol; (function algebra_system, vector y_guess, data real scaling_step, data real f_tol, int max_steps, ...); vector
+solve_powell; (function algebra_system, vector y_guess, ...); vector
+solve_powell_tol; (function algebra_system, vector y_guess, data real rel_tol, data real f_tol, int max_steps, ...); vector
 sort_asc; (array[] int v); array[] int
 sort_asc; (array[] real v); array[] real
 sort_asc; (row_vector v); row_vector
@@ -1110,6 +1179,12 @@ std_normal_lupdf; (reals y); real
 std_normal_qf; (T x); R
 std_normal_rng; (); real
 step; (real x); real
+stochastic_column_constrain; (matrices y); matrices
+stochastic_column_jacobian; (matrices y); matrices
+stochastic_column_unconstrain; (matrices x); matrices
+stochastic_row_constrain; (matrices y); matrices
+stochastic_row_jacobian; (matrices y); matrices
+stochastic_row_unconstrain; (matrices x); matrices
 student_t; ~; real
 student_t_cdf; (reals y | reals nu, reals mu, reals sigma); real
 student_t_lccdf; (reals y | reals nu, reals mu, reals sigma); real
@@ -1130,6 +1205,12 @@ sum; (complex_vector x); complex
 sum; (matrix x); real
 sum; (row_vector x); real
 sum; (vector x); real
+sum_to_zero_constrain; (matrices y); matrices
+sum_to_zero_constrain; (vectors y); vectors
+sum_to_zero_jacobian; (matrices y); matrices
+sum_to_zero_jacobian; (vectors y); vectors
+sum_to_zero_unconstrain; (matrices x); matrices
+sum_to_zero_unconstrain; (vectors x); vectors
 svd; (complex_matrix A); tuple(complex_matrix, vector, complex_matrix)
 svd; (matrix A); tuple(matrix, vector, matrix)
 svd_U; (complex_matrix A); complex_matrix
@@ -1215,8 +1296,9 @@ to_vector; (row_vector v); vector
 to_vector; (vector v); vector
 trace; (complex_matrix A); complex
 trace; (matrix A); real
-trace_gen_quad_form; (matrix D,matrix A, matrix B); real
+trace_gen_quad_form; (matrix D ,matrix A, matrix B); real
 trace_quad_form; (matrix A, matrix B); real
+trace_quad_form; (matrix A, vector B); real
 trigamma; (T x); R
 trunc; (T x); R
 uniform; ~; real
@@ -1227,6 +1309,12 @@ uniform_lpdf; (reals y | reals alpha, reals beta); real
 uniform_lupdf; (reals y | reals alpha, reals beta); real
 uniform_rng; (reals alpha, reals beta); R
 uniform_simplex; (int n); vector
+unit_vectors_constrain; (vectors y); vectors
+unit_vectors_jacobian; (vectors y); vectors
+unit_vectors_unconstrain; (vectors x); vectors
+upper_bound_constrain; (reals y, reals ub); reals
+upper_bound_jacobian; (reals x, reals ub); reals
+upper_bound_unconstrain; (reals x, reals ub); reals
 variance; (array[] real x); real
 variance; (matrix x); real
 variance; (row_vector x); real
