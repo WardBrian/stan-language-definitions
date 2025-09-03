@@ -27292,7 +27292,21 @@
             }
           ],
           "return": "row_vector"
-        },
+        }
+      ]
+    },
+    "zeros_vector": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
         {
           "args": [
             {

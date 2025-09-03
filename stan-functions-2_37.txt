@@ -1350,4 +1350,4 @@ wishart_rng; (real nu, matrix Sigma); matrix
 zeros_array; (int n); array[] real
 zeros_int_array; (int n); array[] int
 zeros_row_vector; (int n); row_vector
-zeros_row_vector; (int n); vector
+zeros_vector; (int n); vector
