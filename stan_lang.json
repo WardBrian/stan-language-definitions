@@ -2319,6 +2319,68 @@
         }
       ]
     },
+    "beta_proportion_lpdf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": true,
+      "lpmf": false,
+      "math": false,
+      "operator": false,
+      "sampling": "beta_proportion",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "theta",
+              "type": "reals"
+            },
+            {
+              "name": "mu",
+              "type": "reals"
+            },
+            {
+              "name": "kappa",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "beta_proportion_lupdf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "theta",
+              "type": "reals"
+            },
+            {
+              "name": "mu",
+              "type": "reals"
+            },
+            {
+              "name": "kappa",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
     "beta_proportion_rng": {
       "density": false,
       "deprecated": false,
@@ -21682,6 +21744,49 @@
         }
       ]
     },
+    "reduce_sum_static": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "f",
+              "type": "F"
+            },
+            {
+              "name": "x",
+              "type": "array[] T"
+            },
+            {
+              "name": "grainsize",
+              "type": "int"
+            },
+            {
+              "name": "s1",
+              "type": "T1"
+            },
+            {
+              "name": "s2",
+              "type": "T2"
+            },
+            {
+              "name": "...",
+              "type": "..."
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
     "reject": {
       "density": false,
       "deprecated": false,
@@ -26838,6 +26943,158 @@
         }
       ]
     },
+    "wiener_lccdf_unnorm": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            },
+            {
+              "name": "var_beta",
+              "type": "real"
+            },
+            {
+              "name": "var_tau",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "wiener_lcdf_unnorm": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        },
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "real"
+            },
+            {
+              "name": "alpha",
+              "type": "real"
+            },
+            {
+              "name": "tau",
+              "type": "real"
+            },
+            {
+              "name": "beta",
+              "type": "real"
+            },
+            {
+              "name": "delta",
+              "type": "real"
+            },
+            {
+              "name": "var_delta",
+              "type": "real"
+            },
+            {
+              "name": "var_beta",
+              "type": "real"
+            },
+            {
+              "name": "var_tau",
+              "type": "real"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
     "wiener_lpdf": {
       "density": true,
       "deprecated": false,
@@ -27460,5 +27717,5 @@
       "tuple"
     ]
   },
-  "version": "2.37"
+  "version": "2.38"
 }
