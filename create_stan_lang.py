@@ -9,9 +9,9 @@ import sys
 import yaml
 
 
-def parse_args(argtext):
+def parse_args(argtext: str):
     """Parse arguments in a function."""
-    argtext = re.sub("[()]", "", argtext).strip()
+    argtext = argtext.strip().strip("()")
     if argtext == "":
         ret = []
     elif argtext == "~":
@@ -19,7 +19,7 @@ def parse_args(argtext):
     else:
         ret = []
         # , separates args, but they can appear within brackets like int[,]
-        for arg in re.split('[|,](?!\\s*])', argtext):
+        for arg in re.split(r'[|,]\s*(?![^\[\]]*\])(?![^()]*\))', argtext):
             arg = arg.strip()
             if arg == '...':
                 ret.append({'type': '...', 'name': '...'})
@@ -63,6 +63,7 @@ def parse_functions(src, data):
                 except Exception as e:
                     print(
                         "Error parsing arguments in %s" % row, file=sys.stderr)
+                    print(e, file=sys.stderr)
                     sys.exit(1)
                 f = {
                     'return': funret.lstrip(),

@@ -211,7 +211,7 @@
             },
             {
               "name": "d",
-              "type": "complex_real"
+              "type": "complex"
             }
           ],
           "return": "complex_matrix"
@@ -7886,6 +7886,38 @@
         }
       ]
     },
+    "generate_laplace_options": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "dimension",
+              "type": "int"
+            }
+          ],
+          "return": "tuple(vector, real, int, int, int, int)"
+        },
+        {
+          "args": [
+            {
+              "name": "theta_init",
+              "type": "vector"
+            }
+          ],
+          "return": "tuple(vector, real, int, int, int, int)"
+        }
+      ]
+    },
     "get_imag": {
       "density": false,
       "deprecated": false,
@@ -9363,10 +9395,6 @@
             {
               "name": "x_i",
               "type": "array[] int"
-            },
-            {
-              "name": "relative_tolerance",
-              "type": "real"
             }
           ],
           "return": "real"
@@ -9396,6 +9424,10 @@
             {
               "name": "x_i",
               "type": "array[] int"
+            },
+            {
+              "name": "relative_tolerance",
+              "type": "real"
             }
           ],
           "return": "real"
@@ -10616,6 +10648,1004 @@
             }
           ],
           "return": "R"
+        }
+      ]
+    },
+    "laplace_latent_bernoulli_logit_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_neg_binomial_2_log_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_poisson_log_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "likelihood_function",
+              "type": "function"
+            },
+            {
+              "name": "likelihood_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_rng_tol": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "likelihood_function",
+              "type": "function"
+            },
+            {
+              "name": "likelihood_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_tol_bernoulli_logit_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_tol_neg_binomial_2_log_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_latent_tol_poisson_log_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "vector"
+        }
+      ]
+    },
+    "laplace_marginal": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "likelihood_function",
+              "type": "function"
+            },
+            {
+              "name": "likelihood_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_bernoulli_logit_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_bernoulli_logit",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_bernoulli_logit_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_neg_binomial_2_log_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_neg_binomial_2_log",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_neg_binomial_2_log_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_poisson_log_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_poisson_log",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_poisson_log_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "likelihood_function",
+              "type": "function"
+            },
+            {
+              "name": "likelihood_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_bernoulli_logit_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_tol_bernoulli_logit",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_bernoulli_logit_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_neg_binomial_2_log_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_tol_neg_binomial_2_log",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_neg_binomial_2_log_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "eta",
+              "type": "real"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_poisson_log_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "laplace_marginal_tol_poisson_log",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "laplace_marginal_tol_poisson_log_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "y",
+              "type": "array[] int"
+            },
+            {
+              "name": "y_index",
+              "type": "array[] int"
+            },
+            {
+              "name": "m",
+              "type": "vector"
+            },
+            {
+              "name": "hessian_block_size",
+              "type": "data int"
+            },
+            {
+              "name": "covariance_function",
+              "type": "function"
+            },
+            {
+              "name": "covariance_arguments",
+              "type": "tuple(...)"
+            },
+            {
+              "name": "tolerances",
+              "type": "tuple(vector, real, int, int, int, int)"
+            }
+          ],
+          "return": "real"
         }
       ]
     },
@@ -26057,6 +27087,33 @@
         }
       ]
     },
+    "trace_dot": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "A",
+              "type": "matrix"
+            },
+            {
+              "name": "B",
+              "type": "matrix"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
     "trace_gen_quad_form": {
       "density": false,
       "deprecated": false,
@@ -27483,6 +28540,164 @@
         }
       ]
     },
+    "yule_simon_cdf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "ints"
+            },
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "yule_simon_lccdf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": true,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": false,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "ints"
+            },
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "yule_simon_lcdf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": true,
+      "lpdf": false,
+      "lpmf": false,
+      "math": false,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "ints"
+            },
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "yule_simon_lpmf": {
+      "density": true,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": true,
+      "math": false,
+      "operator": false,
+      "sampling": "yule_simon",
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "ints"
+            },
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "yule_simon_lupmf": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "n",
+              "type": "ints"
+            },
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "real"
+        }
+      ]
+    },
+    "yule_simon_rng": {
+      "density": false,
+      "deprecated": false,
+      "keyword": false,
+      "lccdf": false,
+      "lcdf": false,
+      "lpdf": false,
+      "lpmf": false,
+      "math": true,
+      "operator": false,
+      "sampling": null,
+      "signatures": [
+        {
+          "args": [
+            {
+              "name": "alpha",
+              "type": "reals"
+            }
+          ],
+          "return": "R"
+        }
+      ]
+    },
     "zeros_array": {
       "density": false,
       "deprecated": false,
@@ -27717,5 +28932,5 @@
       "tuple"
     ]
   },
-  "version": "2.38"
+  "version": "2.39"
 }
